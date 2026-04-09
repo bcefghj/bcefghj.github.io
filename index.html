@@ -72,11 +72,6 @@
           <span class="stat-label">GitHub Followers</span>
           <span class="stat-live">LIVE</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number">1.1w+</span>
-          <span class="stat-label">小红书粉丝</span>
-        </div>
       </div>
       <div class="hero-actions animate-in delay-4">
         <a href="#projects" class="btn btn-primary">
@@ -115,7 +110,7 @@
             <p>深入研究 Claude Code 51万行源码，提炼 Agent 核心设计模式并应用于多个企业级项目。擅长 Multi-Agent 编排、RAG 系统、MCP 协议等前沿技术。</p>
             <div class="about-tags">
               <span class="tag">🎓 中科大硕士</span>
-              <span class="tag">📝 Nature 一作</span>
+              <span class="tag">📝 Nature Computational Science 论文一作（IF=18）</span>
               <span class="tag">⭐ 1400+ Stars</span>
               <span class="tag">🔥 1.1w 粉丝</span>
             </div>
@@ -271,6 +266,152 @@
       <!-- Project Showcase Cards with Images -->
       <div class="projects-showcase">
 
+        <!-- AIOps -->
+        <div class="showcase-card reveal">
+          <div class="showcase-image showcase-image-code">
+            <div class="aiops-visual">
+              <div class="pipeline-flow">
+                <div class="pipeline-node node-alert">
+                  <span class="node-icon">🚨</span>
+                  <span class="node-label">告警 Agent</span>
+                  <span class="node-sub">时序分析·降噪80%+</span>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-node node-rca">
+                  <span class="node-icon">🔍</span>
+                  <span class="node-label">根因 Agent</span>
+                  <span class="node-sub">知识图谱推理</span>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-node node-heal">
+                  <span class="node-icon">🔧</span>
+                  <span class="node-label">自愈 Agent</span>
+                  <span class="node-sub">自动重启·扩容</span>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-node node-approve">
+                  <span class="node-icon">✅</span>
+                  <span class="node-label">审批 Agent</span>
+                  <span class="node-sub">Human-in-loop</span>
+                </div>
+              </div>
+              <div class="aiops-metrics">
+                <div class="metric"><span class="metric-val">80%+</span><span class="metric-key">告警降噪率</span></div>
+                <div class="metric"><span class="metric-val">40min→5min</span><span class="metric-key">故障恢复时间</span></div>
+                <div class="metric"><span class="metric-val">85%+</span><span class="metric-key">根因定位准确率</span></div>
+              </div>
+            </div>
+            <div class="showcase-overlay">
+              <a href="https://github.com/bcefghj/multi-agent-aiops" target="_blank" class="showcase-btn">查看仓库</a>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-meta">
+              <span class="showcase-stars" data-repo="multi-agent-aiops">⭐ 13</span>
+              <span class="showcase-lang">Python · Java · Go</span>
+            </div>
+            <h3>多 Agent 智能运维系统（AIOps）</h3>
+            <p>4-Agent Pipeline + 并行编排架构：<strong>监控告警 Agent</strong>（Prometheus + 智能降噪）→ <strong>根因分析 Agent</strong>（RAG 检索历史故障库）→ <strong>故障自愈 Agent</strong>（自动重启/扩容/回滚）→ <strong>变更审批 Agent</strong>（Human-in-the-loop）。借鉴 Claude Code 权限沙箱设计实现分层权限链。</p>
+            <div class="showcase-kpis">
+              <div class="kpi-item"><span class="kpi-num">80%+</span><span class="kpi-label">告警降噪</span></div>
+              <div class="kpi-item"><span class="kpi-num">5min</span><span class="kpi-label">故障恢复</span></div>
+              <div class="kpi-item"><span class="kpi-num">85%+</span><span class="kpi-label">根因准确率</span></div>
+            </div>
+            <div class="project-tech"><span>LangGraph</span><span>RAG</span><span>Prometheus</span><span>Docker</span><span>Langfuse</span></div>
+            <a href="https://github.com/bcefghj/multi-agent-aiops" target="_blank" class="showcase-repo-link">→ github.com/bcefghj/multi-agent-aiops</a>
+          </div>
+        </div>
+
+        <!-- NoteKing Pro 会议 Agent -->
+        <div class="showcase-card showcase-card-reverse reveal">
+          <div class="showcase-image">
+            <img src="https://raw.githubusercontent.com/bcefghj/noteking-pro/main/demos/openclaw_meeting/preview/page_01.png" alt="NoteKing Pro 会议纪要输出" loading="lazy">
+            <div class="showcase-overlay">
+              <a href="https://github.com/bcefghj/noteking-pro" target="_blank" class="showcase-btn">查看仓库</a>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-meta">
+              <span class="showcase-stars" data-repo="noteking-pro">⭐ 8</span>
+              <span class="showcase-lang">Python · LangGraph · Whisper</span>
+            </div>
+            <h3>NoteKing Pro — 智能会议整理 Agent</h3>
+            <p>从视频笔记工具（V1，30+ 平台）演进到<strong>会议整理多 Agent 系统（V3）</strong>，基于 LangGraph Supervisor 模式编排 4 个 Agent：<strong>转录 Agent</strong>（Whisper + 说话人分离）→ <strong>分析 Agent</strong>（决策/行动项提取）→ <strong>整理 Agent</strong>（结构化会议纪要）→ <strong>跟进 Agent</strong>（MCP 对接日历/邮件/Notion）。借鉴 Claude Code 分层记忆设计实现跨会议上下文关联。</p>
+            <div class="project-tech"><span>LangGraph</span><span>Whisper</span><span>pyannote</span><span>MCP</span><span>Redis</span></div>
+            <div class="showcase-links-row">
+              <a href="https://github.com/bcefghj/noteking-pro" target="_blank" class="showcase-repo-link">→ NoteKing Pro（会议版）</a>
+              <a href="https://github.com/bcefghj/noteking" target="_blank" class="showcase-repo-link">→ NoteKing（视频版）</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 商旅 Agent -->
+        <div class="showcase-card reveal">
+          <div class="showcase-image">
+            <img src="https://raw.githubusercontent.com/bcefghj/travel-agent-guide/main/comics/07-商旅场景.png" alt="商旅Agent场景漫画" loading="lazy">
+            <div class="showcase-overlay">
+              <a href="https://github.com/bcefghj/travel-agent-guide" target="_blank" class="showcase-btn">查看仓库</a>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-meta">
+              <span class="showcase-stars" data-repo="travel-agent-guide">⭐ 29</span>
+              <span class="showcase-lang">Python · Java · Go</span>
+            </div>
+            <h3>商旅 Agent — 企业级智能旅行规划系统</h3>
+            <p>企业级 AI Agent 学习 + 实战 + 面试一体化项目。多 Agent 协作完成差旅申请→行程规划→订票→费用报销全流程，Python/Java/Go 三语言实现，配套 200+ 面试题、STAR 面试稿、哆啦A梦漫画图解。</p>
+            <div class="project-tech"><span>LangGraph</span><span>Multi-Agent</span><span>MCP</span><span>FastAPI</span></div>
+            <a href="https://github.com/bcefghj/travel-agent-guide" target="_blank" class="showcase-repo-link">→ github.com/bcefghj/travel-agent-guide</a>
+          </div>
+        </div>
+
+        <!-- Agent 知识库 -->
+        <div class="showcase-card showcase-card-reverse reveal">
+          <div class="showcase-image showcase-image-code">
+            <div class="knowledge-visual">
+              <div class="kb-flow">
+                <div class="kb-step">
+                  <div class="kb-icon">📄</div>
+                  <div class="kb-label">文档解析 Agent</div>
+                  <div class="kb-desc">PDF/Word/网页 → 结构化文本</div>
+                </div>
+                <div class="kb-arrow">↓</div>
+                <div class="kb-step">
+                  <div class="kb-icon">🧠</div>
+                  <div class="kb-label">知识抽取 Agent</div>
+                  <div class="kb-desc">实体识别 + 关系抽取 + 知识图谱</div>
+                </div>
+                <div class="kb-arrow">↓</div>
+                <div class="kb-step">
+                  <div class="kb-icon">💬</div>
+                  <div class="kb-label">智能问答 Agent</div>
+                  <div class="kb-desc">RAG 检索 + LLM 生成</div>
+                </div>
+                <div class="kb-arrow">↓</div>
+                <div class="kb-step">
+                  <div class="kb-icon">🔄</div>
+                  <div class="kb-label">增量更新 Agent</div>
+                  <div class="kb-desc">变更检测 + 自动同步</div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-overlay">
+              <a href="https://github.com/bcefghj/agent-knowledge-hub" target="_blank" class="showcase-btn">查看仓库</a>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-meta">
+              <span class="showcase-stars" data-repo="agent-knowledge-hub">⭐ 16</span>
+              <span class="showcase-lang">Python · Java · Go</span>
+            </div>
+            <h3>AgentKnowledgeHub — 企业级多 Agent 知识管理系统</h3>
+            <p>4 个 AI Agent 分工协作，完成企业知识的全生命周期管理：<strong>文档解析</strong>（PDF/Word/网页）→ <strong>知识抽取</strong>（实体识别 + 关系图谱）→ <strong>智能问答</strong>（RAG + LLM）→ <strong>增量更新</strong>（变更检测 + 自动同步）。Python/Java/Go 三语言实现，配套完整面试材料。</p>
+            <div class="project-tech"><span>LangGraph</span><span>RAG</span><span>Chroma</span><span>FastAPI</span><span>Docker</span></div>
+            <a href="https://github.com/bcefghj/agent-knowledge-hub" target="_blank" class="showcase-repo-link">→ github.com/bcefghj/agent-knowledge-hub</a>
+          </div>
+        </div>
+
+        <!-- AI Agent 面试全攻略 -->
         <div class="showcase-card reveal">
           <div class="showcase-image">
             <img src="https://raw.githubusercontent.com/bcefghj/ai-agent-interview-guide/main/comics/04-多Agent协作.png" alt="多Agent协作漫画" loading="lazy">
@@ -286,9 +427,11 @@
             <h3>AI Agent 面试全攻略</h3>
             <p>从零到 Offer 的完整面试指南，包含 200+ 面试题、企业级项目（Python/Java/Go 三语言）、简历模板、STAR 面试稿、哆啦A梦漫画图解。</p>
             <div class="project-tech"><span>LangGraph</span><span>RAG</span><span>MCP</span><span>VitePress</span></div>
+            <a href="https://github.com/bcefghj/ai-agent-interview-guide" target="_blank" class="showcase-repo-link">→ github.com/bcefghj/ai-agent-interview-guide</a>
           </div>
         </div>
 
+        <!-- Learn MiniMind -->
         <div class="showcase-card showcase-card-reverse reveal">
           <div class="showcase-image">
             <img src="https://raw.githubusercontent.com/bcefghj/learn-minimind/main/assets/comics/01-llm-overview.png" alt="LLM 概览漫画" loading="lazy">
@@ -302,26 +445,9 @@
               <span class="showcase-lang">LLM / Transformer</span>
             </div>
             <h3>Learn MiniMind 大模型学习指南</h3>
-            <p>22 节课彻底搞懂大语言模型训练全流程：Tokenizer → Embedding → Attention → SFT → LoRA → RLHF。配套哆啦A梦风格漫画图解。</p>
+            <p>22 节课彻底搞懂大语言模型训练全流程：Tokenizer → Embedding → Attention → SFT → LoRA → RLHF。配套哆啦A梦风格漫画图解，GitHub 120 Stars。</p>
             <div class="project-tech"><span>Transformer</span><span>SFT</span><span>LoRA</span><span>RLHF</span></div>
-          </div>
-        </div>
-
-        <div class="showcase-card reveal">
-          <div class="showcase-image">
-            <img src="https://raw.githubusercontent.com/bcefghj/learn-nanobot/main/comics/03-agent-loop.png" alt="Agent Loop 漫画" loading="lazy">
-            <div class="showcase-overlay">
-              <a href="https://github.com/bcefghj/learn-nanobot" target="_blank" class="showcase-btn">查看仓库</a>
-            </div>
-          </div>
-          <div class="showcase-info">
-            <div class="showcase-meta">
-              <span class="showcase-stars" data-repo="learn-nanobot">⭐ 68</span>
-              <span class="showcase-lang">Agent Framework</span>
-            </div>
-            <h3>Learn Nanobot Agent 学习指南</h3>
-            <p>面向小白的 nanobot 面试学习指南，17 章深度教程、134 道八股文、哆啦A梦漫画图解、STAR 面试法、简历模板。</p>
-            <div class="project-tech"><span>Agent Loop</span><span>Memory</span><span>MCP</span><span>Tool</span></div>
+            <a href="https://github.com/bcefghj/learn-minimind" target="_blank" class="showcase-repo-link">→ github.com/bcefghj/learn-minimind</a>
           </div>
         </div>
 
