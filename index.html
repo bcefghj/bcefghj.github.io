@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Cursor glow effect -->
   <div class="cursor-glow" id="cursorGlow"></div>
 
   <!-- Floating nav -->
@@ -23,6 +22,7 @@
         <a href="#about" data-section="about">关于</a>
         <a href="#skills" data-section="skills">技能</a>
         <a href="#projects" data-section="projects">项目</a>
+        <a href="#gallery" data-section="gallery">图鉴</a>
         <a href="#achievements" data-section="achievements">成就</a>
         <a href="#contact" data-section="contact">联系</a>
       </div>
@@ -32,13 +32,14 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- ==================== HERO ==================== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
       <div class="grid-bg"></div>
       <div class="gradient-orb orb-1"></div>
       <div class="gradient-orb orb-2"></div>
       <div class="gradient-orb orb-3"></div>
+      <div class="particle-field" id="particleField"></div>
     </div>
     <div class="hero-content">
       <div class="hero-badge animate-in">
@@ -55,25 +56,26 @@
       </p>
       <div class="hero-stats animate-in delay-3">
         <div class="stat-item">
-          <span class="stat-number" data-target="1434">0</span>
+          <span class="stat-number" id="statStars">--</span>
           <span class="stat-label">GitHub Stars</span>
+          <span class="stat-live">LIVE</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-number" data-target="55">0</span>
-          <span class="stat-suffix">+</span>
+          <span class="stat-number" id="statRepos">--</span>
           <span class="stat-label">开源项目</span>
+          <span class="stat-live">LIVE</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-number" data-target="11000">0</span>
-          <span class="stat-suffix">+</span>
-          <span class="stat-label">小红书粉丝</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="221">0</span>
+          <span class="stat-number" id="statFollowers">--</span>
           <span class="stat-label">GitHub Followers</span>
+          <span class="stat-live">LIVE</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">1.1w+</span>
+          <span class="stat-label">小红书粉丝</span>
         </div>
       </div>
       <div class="hero-actions animate-in delay-4">
@@ -81,9 +83,7 @@
           <span>查看项目</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
         </a>
-        <a href="#contact" class="btn btn-secondary">
-          <span>联系我</span>
-        </a>
+        <a href="#contact" class="btn btn-secondary"><span>联系我</span></a>
         <a href="https://github.com/bcefghj" target="_blank" class="btn btn-ghost">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           <span>GitHub</span>
@@ -91,14 +91,12 @@
       </div>
     </div>
     <div class="scroll-indicator animate-in delay-5">
-      <div class="scroll-mouse">
-        <div class="scroll-wheel"></div>
-      </div>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
       <span>向下滚动</span>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- ==================== ABOUT ==================== -->
   <section class="section" id="about">
     <div class="container">
       <div class="section-header">
@@ -113,7 +111,7 @@
           </div>
           <div class="about-text">
             <h3>AI Agent 工程师 & 开源贡献者</h3>
-            <p>山东大学 数据科学与大数据技术 本科，中国科学技术大学 信息学 硕士。专注于 AI Agent 系统开发与架构设计，在 GitHub 拥有 <strong>1400+ Stars</strong> 和 <strong>55+ 开源项目</strong>，小红书 <strong>1.1w 粉丝</strong>技术博主。</p>
+            <p>山东大学本科，中国科学技术大学硕士。专注于 AI Agent 系统开发与架构设计，在 GitHub 拥有 <strong id="aboutStars">1400+</strong> Stars 和 <strong id="aboutRepos">55+</strong> 开源项目，小红书 <strong>1.1w 粉丝</strong>技术博主。</p>
             <p>深入研究 Claude Code 51万行源码，提炼 Agent 核心设计模式并应用于多个企业级项目。擅长 Multi-Agent 编排、RAG 系统、MCP 协议等前沿技术。</p>
             <div class="about-tags">
               <span class="tag">🎓 中科大硕士</span>
@@ -129,11 +127,11 @@
             <h4>教育背景</h4>
             <div class="education-item">
               <span class="edu-school">中国科学技术大学</span>
-              <span class="edu-degree">信息学 · 硕士</span>
+              <span class="edu-degree">硕士</span>
             </div>
             <div class="education-item">
               <span class="edu-school">山东大学</span>
-              <span class="edu-degree">数据科学与大数据技术 · 本科</span>
+              <span class="edu-degree">本科</span>
             </div>
           </div>
           <div class="about-card about-focus reveal">
@@ -151,7 +149,7 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- ==================== SKILLS ==================== -->
   <section class="section section-dark" id="skills">
     <div class="container">
       <div class="section-header">
@@ -160,10 +158,7 @@
       </div>
       <div class="skills-grid">
         <div class="skill-category reveal">
-          <div class="skill-category-header">
-            <div class="skill-icon">🐍</div>
-            <h3>编程语言</h3>
-          </div>
+          <div class="skill-category-header"><div class="skill-icon">🐍</div><h3>编程语言</h3></div>
           <div class="skill-items">
             <div class="skill-chip skill-expert">Python</div>
             <div class="skill-chip skill-proficient">TypeScript</div>
@@ -172,10 +167,7 @@
           </div>
         </div>
         <div class="skill-category reveal">
-          <div class="skill-category-header">
-            <div class="skill-icon">🤖</div>
-            <h3>AI / Agent 框架</h3>
-          </div>
+          <div class="skill-category-header"><div class="skill-icon">🤖</div><h3>AI / Agent 框架</h3></div>
           <div class="skill-items">
             <div class="skill-chip skill-expert">LangChain</div>
             <div class="skill-chip skill-expert">LangGraph</div>
@@ -185,10 +177,7 @@
           </div>
         </div>
         <div class="skill-category reveal">
-          <div class="skill-category-header">
-            <div class="skill-icon">⚡</div>
-            <h3>Agent 核心技术</h3>
-          </div>
+          <div class="skill-category-header"><div class="skill-icon">⚡</div><h3>Agent 核心技术</h3></div>
           <div class="skill-items">
             <div class="skill-chip skill-expert">Multi-Agent</div>
             <div class="skill-chip skill-expert">ReAct</div>
@@ -199,10 +188,7 @@
           </div>
         </div>
         <div class="skill-category reveal">
-          <div class="skill-category-header">
-            <div class="skill-icon">🗄️</div>
-            <h3>向量数据库 / 存储</h3>
-          </div>
+          <div class="skill-category-header"><div class="skill-icon">🗄️</div><h3>向量数据库 / 存储</h3></div>
           <div class="skill-items">
             <div class="skill-chip skill-proficient">Chroma</div>
             <div class="skill-chip skill-proficient">FAISS</div>
@@ -211,10 +197,7 @@
           </div>
         </div>
         <div class="skill-category reveal">
-          <div class="skill-category-header">
-            <div class="skill-icon">🧠</div>
-            <h3>LLM 基础</h3>
-          </div>
+          <div class="skill-category-header"><div class="skill-icon">🧠</div><h3>LLM 基础</h3></div>
           <div class="skill-items">
             <div class="skill-chip skill-proficient">Transformer</div>
             <div class="skill-chip skill-proficient">Attention</div>
@@ -223,10 +206,7 @@
           </div>
         </div>
         <div class="skill-category reveal">
-          <div class="skill-category-header">
-            <div class="skill-icon">🛠️</div>
-            <h3>工程化 & AI 编码</h3>
-          </div>
+          <div class="skill-category-header"><div class="skill-icon">🛠️</div><h3>工程化 & AI 编码</h3></div>
           <div class="skill-items">
             <div class="skill-chip skill-proficient">Docker</div>
             <div class="skill-chip skill-proficient">FastAPI</div>
@@ -245,7 +225,7 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- ==================== PROJECTS ==================== -->
   <section class="section" id="projects">
     <div class="container">
       <div class="section-header">
@@ -254,188 +234,297 @@
         <p class="section-desc">深入 Agent 架构设计与源码分析，从理论到实践的完整闭环</p>
       </div>
 
-      <!-- Featured Project -->
+      <!-- Featured Project: Claude Code -->
       <div class="project-featured reveal">
         <div class="project-featured-badge">🏆 王牌项目</div>
         <div class="project-featured-content">
           <div class="project-featured-info">
             <h3>Claude Code 源码深度分析与企业级 Agent 框架</h3>
             <p class="project-date">2026.03 - 至今</p>
-            <p class="project-desc">对 Anthropic Claude Code v2.1.88 的 <strong>51 万行 TypeScript 源码</strong>进行系统性逆向分析，提炼出 Agent Loop、分层记忆系统、多 Agent 协同、权限沙箱、Prompt Cache 等 <strong>5 大核心设计模式</strong>。基于分析成果开发企业级 miniClaudeCode 框架，支持多模型切换、四层分层记忆、多 Agent 协同。</p>
+            <p class="project-desc">对 Anthropic Claude Code v2.1.88 的 <strong>51 万行 TypeScript 源码</strong>进行系统性逆向分析，提炼出 Agent Loop、分层记忆系统、多 Agent 协同、权限沙箱、Prompt Cache 等 <strong>5 大核心设计模式</strong>。基于分析成果开发企业级 miniClaudeCode 框架。</p>
             <div class="project-highlights">
-              <div class="highlight-item">
-                <span class="highlight-number">51万</span>
-                <span class="highlight-label">行源码分析</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-number">5000</span>
-                <span class="highlight-label">行框架代码</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-number">301</span>
-                <span class="highlight-label">GitHub Stars</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-number">120</span>
-                <span class="highlight-label">节图文教程</span>
-              </div>
+              <div class="highlight-item"><span class="highlight-number">51万</span><span class="highlight-label">行源码分析</span></div>
+              <div class="highlight-item"><span class="highlight-number">5000</span><span class="highlight-label">行框架代码</span></div>
+              <div class="highlight-item"><span class="highlight-number" id="guideV1Stars">301</span><span class="highlight-label">Stars (V1)</span></div>
+              <div class="highlight-item"><span class="highlight-number">200+</span><span class="highlight-label">节图文教程</span></div>
             </div>
             <div class="project-tech">
               <span>Python</span><span>TypeScript</span><span>Agent Loop</span><span>分层记忆</span><span>MCP</span><span>多模型适配</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/bcefghj/claude-code-complete-guide" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                源码指南 V1 · 301 Stars
-              </a>
-              <a href="https://github.com/bcefghj/claude-code-complete-guide_v2" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                源码指南 V2 · 90 Stars
-              </a>
-              <a href="https://github.com/bcefghj/miniClaudeCode" target="_blank" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                miniClaudeCode · 52 Stars
-              </a>
+              <a href="https://github.com/bcefghj/claude-code-complete-guide" target="_blank" class="project-link">📖 源码指南 V1</a>
+              <a href="https://github.com/bcefghj/claude-code-complete-guide_v2" target="_blank" class="project-link">📖 源码指南 V2</a>
+              <a href="https://github.com/bcefghj/miniClaudeCode" target="_blank" class="project-link">⚙️ miniClaudeCode</a>
+              <a href="https://github.com/bcefghj/claude-code-comics" target="_blank" class="project-link">🎨 漫画图解</a>
             </div>
           </div>
           <div class="project-featured-visual">
-            <div class="code-window">
-              <div class="code-header">
-                <div class="code-dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <span class="code-title">agent_loop.py</span>
-              </div>
-              <pre class="code-body"><code><span class="code-keyword">class</span> <span class="code-class">AgentLoop</span>:
-    <span class="code-comment">"""Four-layer hierarchical memory"""</span>
-
-    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self):
-        self.constitution = <span class="code-class">ConstitutionLayer</span>()
-        self.index = <span class="code-class">IndexLayer</span>()
-        self.long_term = <span class="code-class">TopicMemory</span>()
-        self.session = <span class="code-class">SessionMemory</span>()
-
-    <span class="code-keyword">async def</span> <span class="code-func">run</span>(self, task):
-        <span class="code-keyword">while not</span> task.complete:
-            context = <span class="code-keyword">await</span> self.<span class="code-func">gather_context</span>()
-            action = <span class="code-keyword">await</span> self.<span class="code-func">think</span>(context)
-            result = <span class="code-keyword">await</span> self.<span class="code-func">execute</span>(action)
-            <span class="code-keyword">await</span> self.<span class="code-func">reflect</span>(result)</code></pre>
+            <div class="project-image-stack">
+              <img src="https://raw.githubusercontent.com/bcefghj/claude-code-complete-guide/main/docs/_media/comic-architecture-overview.png" alt="Claude Code 架构漫画" class="stack-img stack-1" loading="lazy">
+              <img src="https://raw.githubusercontent.com/bcefghj/claude-code-complete-guide/main/docs/_media/comic-agent-swarm.png" alt="Agent Swarm 漫画" class="stack-img stack-2" loading="lazy">
+              <img src="https://raw.githubusercontent.com/bcefghj/claude-code-complete-guide/main/docs/_media/comic-permissions.png" alt="权限系统漫画" class="stack-img stack-3" loading="lazy">
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Project Grid -->
+      <!-- Project Showcase Cards with Images -->
+      <div class="projects-showcase">
+
+        <div class="showcase-card reveal">
+          <div class="showcase-image">
+            <img src="https://raw.githubusercontent.com/bcefghj/ai-agent-interview-guide/main/comics/04-多Agent协作.png" alt="多Agent协作漫画" loading="lazy">
+            <div class="showcase-overlay">
+              <a href="https://github.com/bcefghj/ai-agent-interview-guide" target="_blank" class="showcase-btn">查看仓库</a>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-meta">
+              <span class="showcase-stars" data-repo="ai-agent-interview-guide">⭐ 285</span>
+              <span class="showcase-lang">Python / Java / Go</span>
+            </div>
+            <h3>AI Agent 面试全攻略</h3>
+            <p>从零到 Offer 的完整面试指南，包含 200+ 面试题、企业级项目（Python/Java/Go 三语言）、简历模板、STAR 面试稿、哆啦A梦漫画图解。</p>
+            <div class="project-tech"><span>LangGraph</span><span>RAG</span><span>MCP</span><span>VitePress</span></div>
+          </div>
+        </div>
+
+        <div class="showcase-card showcase-card-reverse reveal">
+          <div class="showcase-image">
+            <img src="https://raw.githubusercontent.com/bcefghj/learn-minimind/main/assets/comics/01-llm-overview.png" alt="LLM 概览漫画" loading="lazy">
+            <div class="showcase-overlay">
+              <a href="https://github.com/bcefghj/learn-minimind" target="_blank" class="showcase-btn">查看仓库</a>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-meta">
+              <span class="showcase-stars" data-repo="learn-minimind">⭐ 120</span>
+              <span class="showcase-lang">LLM / Transformer</span>
+            </div>
+            <h3>Learn MiniMind 大模型学习指南</h3>
+            <p>22 节课彻底搞懂大语言模型训练全流程：Tokenizer → Embedding → Attention → SFT → LoRA → RLHF。配套哆啦A梦风格漫画图解。</p>
+            <div class="project-tech"><span>Transformer</span><span>SFT</span><span>LoRA</span><span>RLHF</span></div>
+          </div>
+        </div>
+
+        <div class="showcase-card reveal">
+          <div class="showcase-image">
+            <img src="https://raw.githubusercontent.com/bcefghj/learn-nanobot/main/comics/03-agent-loop.png" alt="Agent Loop 漫画" loading="lazy">
+            <div class="showcase-overlay">
+              <a href="https://github.com/bcefghj/learn-nanobot" target="_blank" class="showcase-btn">查看仓库</a>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-meta">
+              <span class="showcase-stars" data-repo="learn-nanobot">⭐ 68</span>
+              <span class="showcase-lang">Agent Framework</span>
+            </div>
+            <h3>Learn Nanobot Agent 学习指南</h3>
+            <p>面向小白的 nanobot 面试学习指南，17 章深度教程、134 道八股文、哆啦A梦漫画图解、STAR 面试法、简历模板。</p>
+            <div class="project-tech"><span>Agent Loop</span><span>Memory</span><span>MCP</span><span>Tool</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Compact Project Grid -->
+      <h3 class="subsection-title reveal">更多 Multi-Agent 系统项目</h3>
       <div class="projects-grid">
-        <div class="project-card reveal">
-          <div class="project-card-header">
-            <div class="project-card-icon">🎙️</div>
-            <div class="project-card-links">
-              <a href="https://github.com/bcefghj/noteking" target="_blank" title="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3>NoteKing 智能会议整理 Agent</h3>
-          <p>基于 LangGraph Supervisor 模式编排 4 个 Agent 协作：转录 → 分析 → 整理 → 跟进，实现会议全流程自动化处理。</p>
-          <div class="project-tech">
-            <span>Python</span><span>LangGraph</span><span>MCP</span><span>Whisper</span><span>Redis</span>
-          </div>
-        </div>
 
-        <div class="project-card reveal">
-          <div class="project-card-header">
-            <div class="project-card-icon">🔧</div>
-            <div class="project-card-links">
-              <a href="https://github.com/bcefghj/multi-agent-aiops" target="_blank" title="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3>多 Agent 智能运维系统 (AIOps)</h3>
-          <p>4-Agent Pipeline + 并行编排：监控告警 → 根因分析 → 故障自愈 → 变更审批。告警降噪率 80%+，故障恢复从 30min 缩短到 5min。</p>
-          <div class="project-tech">
-            <span>Python</span><span>LangGraph</span><span>RAG</span><span>Prometheus</span><span>Docker</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <div class="project-card-header">
-            <div class="project-card-icon">📚</div>
-            <div class="project-card-links">
-              <a href="https://github.com/bcefghj/ai-agent-interview-guide" target="_blank" title="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3>AI Agent 面试全攻略</h3>
-          <p>从零到 Offer 的完整面试指南，包含 200+ 面试题、企业级项目、简历模板、STAR 面试稿，GitHub 285 Stars。</p>
-          <div class="project-tech">
-            <span>Python</span><span>Java</span><span>Go</span><span>VitePress</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <div class="project-card-header">
-            <div class="project-card-icon">🧠</div>
-            <div class="project-card-links">
-              <a href="https://github.com/bcefghj/learn-minimind" target="_blank" title="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3>Learn MiniMind 大模型学习指南</h3>
-          <p>22 节课彻底搞懂大语言模型，系统化学习 LLM 训练全流程，GitHub 120 Stars。</p>
-          <div class="project-tech">
-            <span>LLM</span><span>Transformer</span><span>SFT</span><span>LoRA</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-repo="multi-agent-ecommerce-system">
           <div class="project-card-header">
             <div class="project-card-icon">🛒</div>
-            <div class="project-card-links">
-              <a href="https://github.com/bcefghj/multi-agent-ecommerce-system" target="_blank" title="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
+            <span class="card-stars">⭐ <span class="live-stars">66</span></span>
           </div>
-          <h3>多 Agent 电商推荐系统</h3>
-          <p>Multi-Agent 电商推荐与营销系统，Python/Java/Go 三语言实现，GitHub 66 Stars。</p>
-          <div class="project-tech">
-            <span>Python</span><span>Java</span><span>Go</span><span>Multi-Agent</span>
-          </div>
+          <h3>多Agent电商推荐系统</h3>
+          <p>Multi-Agent 电商推荐与营销系统，Python/Java/Go 三语言实现。</p>
+          <div class="project-tech"><span>Python</span><span>Java</span><span>Go</span></div>
+          <a href="https://github.com/bcefghj/multi-agent-ecommerce-system" target="_blank" class="card-link-overlay"></a>
         </div>
 
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-repo="learn-MedicalGPT">
+          <div class="project-card-header">
+            <div class="project-card-icon">🏥</div>
+            <span class="card-stars">⭐ <span class="live-stars">45</span></span>
+          </div>
+          <h3>MedicalGPT 医疗大模型指南</h3>
+          <p>20节课搞懂医疗大模型训练全流程：PT/SFT/LoRA/RLHF/DPO/GRPO。</p>
+          <div class="project-tech"><span>SFT</span><span>LoRA</span><span>RLHF</span><span>DPO</span></div>
+          <a href="https://github.com/bcefghj/learn-MedicalGPT" target="_blank" class="card-link-overlay"></a>
+        </div>
+
+        <div class="project-card reveal" data-repo="ClaudeCode-Source-Analysis">
+          <div class="project-card-header">
+            <div class="project-card-icon">🔍</div>
+            <span class="card-stars">⭐ <span class="live-stars">44</span></span>
+          </div>
+          <h3>Claude Code 源码解析报告</h3>
+          <p>基于 2026 年 3 月 npm source map 泄漏事件的完整技术分析。</p>
+          <div class="project-tech"><span>TypeScript</span><span>逆向分析</span><span>架构</span></div>
+          <a href="https://github.com/bcefghj/ClaudeCode-Source-Analysis" target="_blank" class="card-link-overlay"></a>
+        </div>
+
+        <div class="project-card reveal" data-repo="learn-minimind-multimodal">
+          <div class="project-card-header">
+            <div class="project-card-icon">👁️</div>
+            <span class="card-stars">⭐ <span class="live-stars">32</span></span>
+          </div>
+          <h3>MiniMind-V 多模态学习指南</h3>
+          <p>20节课 + 278道面试题 + STAR面试稿 + 哆啦A梦漫画。</p>
+          <div class="project-tech"><span>多模态</span><span>Vision</span><span>LLM</span></div>
+          <a href="https://github.com/bcefghj/learn-minimind-multimodal" target="_blank" class="card-link-overlay"></a>
+        </div>
+
+        <div class="project-card reveal" data-repo="travel-agent-guide">
           <div class="project-card-header">
             <div class="project-card-icon">✈️</div>
-            <div class="project-card-links">
-              <a href="https://github.com/bcefghj/travel-agent-guide" target="_blank" title="GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
+            <span class="card-stars">⭐ <span class="live-stars">29</span></span>
           </div>
-          <h3>多 Agent 智能旅游规划系统</h3>
-          <p>企业级 AI Agent 学习+实战+面试一体化项目，Python/Java/Go 三语言，200+ 面试题。</p>
-          <div class="project-tech">
-            <span>Python</span><span>Java</span><span>Go</span><span>LangGraph</span>
-          </div>
+          <h3>多Agent智能旅游规划</h3>
+          <p>企业级 AI Agent 学习+实战+面试一体化，三语言 200+ 面试题。</p>
+          <div class="project-tech"><span>Python</span><span>Java</span><span>Go</span></div>
+          <a href="https://github.com/bcefghj/travel-agent-guide" target="_blank" class="card-link-overlay"></a>
         </div>
+
+        <div class="project-card reveal" data-repo="smart-cs-multi-agent">
+          <div class="project-card-header">
+            <div class="project-card-icon">💬</div>
+            <span class="card-stars">⭐ <span class="live-stars">25</span></span>
+          </div>
+          <h3>智能客服多Agent系统</h3>
+          <p>Supervisor编排 + 分层记忆 + MCP + 全链路追踪，三语言实现。</p>
+          <div class="project-tech"><span>LangGraph</span><span>MCP</span><span>Redis</span></div>
+          <a href="https://github.com/bcefghj/smart-cs-multi-agent" target="_blank" class="card-link-overlay"></a>
+        </div>
+
+        <div class="project-card reveal" data-repo="multi-agent-travel-planner">
+          <div class="project-card-header">
+            <div class="project-card-icon">🗺️</div>
+            <span class="card-stars">⭐ <span class="live-stars">25</span></span>
+          </div>
+          <h3>多Agent旅行行程规划</h3>
+          <p>多Agent智能旅游行程规划系统，Python+Java+Go三语言实现。</p>
+          <div class="project-tech"><span>Multi-Agent</span><span>Pipeline</span></div>
+          <a href="https://github.com/bcefghj/multi-agent-travel-planner" target="_blank" class="card-link-overlay"></a>
+        </div>
+
+        <div class="project-card reveal" data-repo="learn-nano-vllm">
+          <div class="project-card-header">
+            <div class="project-card-icon">🚀</div>
+            <span class="card-stars">⭐ <span class="live-stars">22</span></span>
+          </div>
+          <h3>nano-vllm 面试学习指南</h3>
+          <p>20节课程 + 72道面试八股文 + STAR面试法 + 哆啦A梦漫画。</p>
+          <div class="project-tech"><span>vLLM</span><span>推理优化</span><span>部署</span></div>
+          <a href="https://github.com/bcefghj/learn-nano-vllm" target="_blank" class="card-link-overlay"></a>
+        </div>
+
+        <div class="project-card reveal" data-repo="comic-guide-skill">
+          <div class="project-card-header">
+            <div class="project-card-icon">🎨</div>
+            <span class="card-stars">⭐ <span class="live-stars">20</span></span>
+          </div>
+          <h3>漫画风格图解生成器</h3>
+          <p>10+ 动漫风格（哆啦A梦/火影/海贼王/龙珠），兼容 Cursor / Claude Code。</p>
+          <div class="project-tech"><span>AI Art</span><span>Skill</span><span>Cursor</span></div>
+          <a href="https://github.com/bcefghj/comic-guide-skill" target="_blank" class="card-link-overlay"></a>
+        </div>
+
+        <div class="project-card reveal" data-repo="multi-agent-aiops">
+          <div class="project-card-header">
+            <div class="project-card-icon">🔧</div>
+            <span class="card-stars">⭐ <span class="live-stars">13</span></span>
+          </div>
+          <h3>多Agent智能运维 AIOps</h3>
+          <p>4-Agent Pipeline：监控告警→根因分析→故障自愈→变更审批。</p>
+          <div class="project-tech"><span>Prometheus</span><span>RAG</span><span>Docker</span></div>
+          <a href="https://github.com/bcefghj/multi-agent-aiops" target="_blank" class="card-link-overlay"></a>
+        </div>
+
+        <div class="project-card reveal" data-repo="agent-knowledge-hub">
+          <div class="project-card-header">
+            <div class="project-card-icon">📚</div>
+            <span class="card-stars">⭐ <span class="live-stars">16</span></span>
+          </div>
+          <h3>多Agent知识管理系统</h3>
+          <p>4个AI Agent协作：文档解析→知识抽取→智能问答→增量更新。</p>
+          <div class="project-tech"><span>RAG</span><span>Chroma</span><span>FastAPI</span></div>
+          <a href="https://github.com/bcefghj/agent-knowledge-hub" target="_blank" class="card-link-overlay"></a>
+        </div>
+
+        <div class="project-card reveal" data-repo="noteking-pro">
+          <div class="project-card-header">
+            <div class="project-card-icon">👑</div>
+            <span class="card-stars">⭐ <span class="live-stars">8</span></span>
+          </div>
+          <h3>NoteKing Pro 会议处理</h3>
+          <p>全网最强视频/录音处理：会议转文字、说话人分离、23种输出格式。</p>
+          <div class="project-tech"><span>Whisper</span><span>MiniMax</span><span>LaTeX</span></div>
+          <a href="https://github.com/bcefghj/noteking-pro" target="_blank" class="card-link-overlay"></a>
+        </div>
+
       </div>
 
       <div class="projects-more reveal">
-        <a href="https://github.com/bcefghj?tab=repositories" target="_blank" class="btn btn-outline">
+        <a href="https://github.com/bcefghj?tab=repositories&sort=stargazers" target="_blank" class="btn btn-outline">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          查看全部 55+ 项目
+          查看全部 <span id="totalReposBtn">55+</span> 项目
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Achievements Section -->
-  <section class="section section-dark" id="achievements">
+  <!-- ==================== GALLERY ==================== -->
+  <section class="section section-dark" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PROJECT GALLERY</span>
+        <h2 class="section-title">项目图鉴</h2>
+        <p class="section-desc">哆啦A梦风格漫画图解 · 让复杂技术一目了然</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item gallery-wide">
+          <img src="https://raw.githubusercontent.com/bcefghj/claude-code-complete-guide/main/docs/_media/comic-architecture-overview.png" alt="Claude Code 架构总览" loading="lazy">
+          <div class="gallery-caption">Claude Code 架构总览</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/bcefghj/ai-agent-interview-guide/main/comics/01-什么是Agent.png" alt="什么是Agent" loading="lazy">
+          <div class="gallery-caption">什么是 Agent</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/bcefghj/ai-agent-interview-guide/main/comics/02-ReAct循环.png" alt="ReAct循环" loading="lazy">
+          <div class="gallery-caption">ReAct 循环</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/bcefghj/ai-agent-interview-guide/main/comics/03-RAG流程.png" alt="RAG流程" loading="lazy">
+          <div class="gallery-caption">RAG 流程</div>
+        </div>
+        <div class="gallery-item gallery-wide">
+          <img src="https://raw.githubusercontent.com/bcefghj/claude-code-complete-guide/main/docs/_media/comic-agent-swarm.png" alt="Agent Swarm 多Agent协同" loading="lazy">
+          <div class="gallery-caption">Agent Swarm 多Agent协同</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/bcefghj/learn-minimind/main/assets/comics/06-self-attention.png" alt="Self-Attention 机制" loading="lazy">
+          <div class="gallery-caption">Self-Attention 机制</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/bcefghj/learn-nanobot/main/comics/04-memory-system.png" alt="记忆系统" loading="lazy">
+          <div class="gallery-caption">Agent 记忆系统</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/bcefghj/claude-code-complete-guide/main/docs/_media/comic-performance.png" alt="性能优化" loading="lazy">
+          <div class="gallery-caption">性能优化策略</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/bcefghj/learn-nanobot/main/comics/05-mcp-protocol.png" alt="MCP协议" loading="lazy">
+          <div class="gallery-caption">MCP 协议</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ACHIEVEMENTS ==================== -->
+  <section class="section" id="achievements">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">ACHIEVEMENTS</span>
@@ -469,7 +558,7 @@
         <div class="achievement-card reveal">
           <div class="achievement-icon">⭐</div>
           <h3>GitHub Starstruck x2</h3>
-          <p>1434 Stars · 221 Followers · 55+ Repos</p>
+          <p id="achieveGithub">1434 Stars · 221 Followers · 55+ Repos</p>
           <span class="achievement-badge">开源影响力</span>
         </div>
         <div class="achievement-card reveal">
@@ -482,32 +571,13 @@
     </div>
   </section>
 
-  <!-- Open Source Contribution Graph -->
-  <section class="section" id="opensource">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">OPEN SOURCE</span>
-        <h2 class="section-title">开源贡献</h2>
-      </div>
-      <div class="github-stats reveal">
-        <div class="github-stats-grid">
-          <img src="https://github-readme-stats.vercel.app/api?username=bcefghj&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9" alt="GitHub Stats" loading="lazy">
-          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bcefghj&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9" alt="Top Languages" loading="lazy">
-        </div>
-        <div class="github-streak">
-          <img src="https://github-readme-streak-stats.herokuapp.com/?user=bcefghj&theme=tokyonight&hide_border=true&background=0d1117&stroke=58a6ff&ring=58a6ff&fire=ff6e6e&currStreakLabel=58a6ff" alt="GitHub Streak" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
+  <!-- ==================== CONTACT ==================== -->
   <section class="section section-dark" id="contact">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">GET IN TOUCH</span>
         <h2 class="section-title">联系我</h2>
-        <p class="section-desc">正在寻找 AI Agent 方向的日常实习机会，可实习 3 个月以上</p>
+        <p class="section-desc">正在寻找 AI Agent 方向的日常实习机会，可线下实习六个月以上</p>
       </div>
       <div class="contact-grid">
         <a href="mailto:bcefghj@163.com" class="contact-card reveal">
@@ -529,7 +599,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
           </div>
           <h3>小红书</h3>
-          <p>@bcefghj · 1.1w 粉丝</p>
+          <p>@bcefghj · 1.1w+ 粉丝</p>
         </a>
         <div class="contact-card contact-wechat reveal">
           <div class="contact-icon">
@@ -545,7 +615,7 @@
           <p>如果您的团队正在寻找对 Agent 架构有深入理解的实习生，欢迎联系我！</p>
           <div class="cta-info">
             <span>📍 可武汉线下到岗</span>
-            <span>⏰ 可实习 3 个月以上</span>
+            <span>⏰ 可线下实习六个月以上</span>
             <span>🎓 中科大在读硕士</span>
           </div>
         </div>
